@@ -1,1 +1,33 @@
+package org.firstinspires.ftc.teamcode;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+@Autonomous
+public class ColorSensorDemo extends LinearOpMode
+{
+  private ColorSensor color1;
+  private DcMotor left1;
+  private DcMotor right1;
+  
+  color1=hardwareMap.get(ColorSensor.class, "colorSensor1");
+  
+  waitforStart()
+  
+  public void runOpMode(){
+    left1.setMode(RUN_WITHOUT_ENCODER);
+    right1.setMode(RUN_WITHOUT_ENCODER);
+    while (opModeIsActive()&&(color1.red()>color1.blue()+100)&&(color1.red()>color1.green()+100)&&(color1.red>150)){
+      left1.setPower(1);
+      right1.setPower(1);
+      telemetry.addData("Red: ", color1.red());
+      telemetry.addData("Blue: ", color1.blue());
+      telemetry.addData("Green: ", color1.blue());
+      telemetry.update();
+      }
+    }
+  }
+}
 
