@@ -38,10 +38,10 @@ public class AutonomousPractice1 extends LinearOpMode {
     right2.setTargetPosition(tgt);
     left2.setTargetPosition(tgt);
     
-    left1.setMode(1);
-    left2.setMode(1);
-    right1.setMode(1);
-    right2.setMode(1);
+    left1.setMode(RUN_TO_POSITION);
+    left2.setMode(RUN_TO_POSITION);
+    right1.setMode(RUN_TO_POSITION);
+    right2.setMode(RUN_TO_POSITION);
     
     left1.setPower(1);
     left2.setPower(1);
